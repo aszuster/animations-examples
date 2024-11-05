@@ -13,7 +13,7 @@ const FirstSection = ({ progress }) => {
       >
         <motion.div
           style={{ y: progress  }} // Controla el movimiento con el retraso
-          className="flex flex-col relative w-screen h-[calc(100vh+50px)] rounded-[25px] p-[50px] origin-top bg-lilac-00"
+          className="flex flex-col relative w-screen h-[calc(100vh+50px)] rounded-t-[25px] p-[50px] origin-top bg-lilac-00"
         >
           <h2 className="font-montserrat font-semibold text-left m-0 text-[50px] pt-[50px] uppercase">
            Title
