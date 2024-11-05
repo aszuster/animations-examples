@@ -50,14 +50,14 @@ const AnimatedLetters = ({ title, disabled }) => (
     animate="animate"
     className="row-title  text-[12rem] leading-[14rem]  font-semibold relative inline-block whitespace-nowrap text-green-00 font-montserrat"
   >
-    {[...title].map((letter) => (
+    {/* {[...title].map((letter) => (
       <motion.span
         variants={letterAnimation}
         className="row-letter left-0 text-[12rem] leading-[14rem] font-semibold relative inline-block whitespace-nowrap font-montserrat"
       >
         {letter}
       </motion.span>
-    ))}
+    ))} */}
   </motion.span>
 );
 
