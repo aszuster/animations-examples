@@ -1,33 +1,30 @@
 "use client";
-import {useRef} from 'react';
-import { projects } from "../data";
-import { useScroll } from "framer-motion";
-import Card from "./Card";
+import { useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import ScrollVideo from "./ScrollVideo";
+import FirstSection from "./Sections/FirstSection";
 
 export default function StackedVideo() {
-
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end end"],
+    offset: ["start start", "end start"],
   });
 
+  // Delayed progress for FirstSection
+  const delayedProgress = useTransform(scrollYProgress, [0.8, 1], [0, 1]); // Inicia en 30%
 
   return (
-      <div ref={container} className="">
-        {projects.map((project, i) => {
-          const targetScale = 1 - (projects.length - i) * 0.05;
-          return (
-            <Card
-              key={`p_${i}`}
-              i={i}
-              {...project}
-              progress={scrollYProgress}
-              range={[i * 0.25, 1]}
-              targetScale={targetScale}
-            />
-          );
-        })}
+    <div ref={container} className="">
+      <div className="h-[500vh]">
+        <div className="h-[300vh] sticky top-0">
+          <ScrollVideo />
+        </div>
+        {/* <div className="h-[100vh]" /> */}
+        <div className="h-[200vh]">
+          <FirstSection progress={delayedProgress} />
+        </div>
       </div>
+    </div>
   );
 }
