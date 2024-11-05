@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { useScroll } from "framer-motion";
 import StackedCards from "./components/StackedCards";
 import CircleHoverText from "./components/CircleHoverText";
+import ScrollVideo from "./components/ScrollVideo";
 
 export default function Home() {
   useEffect(() => {
@@ -20,6 +21,10 @@ export default function Home() {
 
   return (
     <div>
+      <div className="h-[300vh]">
+        <h1>Scroll down to control the video</h1>
+        <ScrollVideo />
+      </div>
       <CircleHoverText />
       <StackedCards />
       {/* <div ref={container} className="">
